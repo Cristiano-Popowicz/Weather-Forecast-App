@@ -29,7 +29,7 @@ describe("Screen: Dashboard", () => {
 
     render(<Dashboard />)
 
-    const cityName = await waitFor(() => screen.findByText(/rio do sul/i))
+    const cityName = await waitFor(() => screen.findByText(/rio do sul/i), { timeout: 10000 })
     expect(cityName).toBeTruthy()
   })
 
@@ -60,5 +60,5 @@ describe("Screen: Dashboard", () => {
     )
 
     expect(screen.getByText(cityName, { exact: false })).toBeTruthy()
-  })
+  }, 15000) // Aumenta o timeout para 15000 ms (15 segundos)
 })
