@@ -1,1 +1,6 @@
-npm run test:coverage
+echo 'Check for linting errors...'
+
+npm run test:coverage ||
+(echo 'Linting errors or tests failed. Please fix them before commiting.' && exit 1)
+
+echo 'Done'
