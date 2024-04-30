@@ -94,7 +94,6 @@ export function Dashboard() {
             isLoading={isSearching}
             placeholder="Buscar local"
           />
-          <Text>Teste</Text>
           <View style={{ marginBottom: 8 }} />
           <WeatherToday city={city.name} weather={weather.today.weather} />
           <View style={{ marginBottom: 8 }} />        
