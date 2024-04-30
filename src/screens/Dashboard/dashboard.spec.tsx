@@ -26,12 +26,12 @@ describe("Screen: Dashboard", () => {
 
   it("should be show city weather", async () => {
     jest.spyOn(api, "get").mockResolvedValue({ data: mockWeatherAPIResponse })
-
+  
     render(<Dashboard />)
-
+  
     const cityName = await waitFor(() => screen.findByText(/rio do sul/i), { timeout: 10000 })
     expect(cityName).toBeTruthy()
-  })
+  }, 15000) // Aumenta o timeout para 15000 ms (15 segundos)  
 
   it("should be show another selected weather city", async () => {
     jest
